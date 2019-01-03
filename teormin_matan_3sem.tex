@@ -1,0 +1,80 @@
+\documentclass[oneside,final,12pt]{extreport}
+\usepackage[utf8x]{inputenc}
+\usepackage[russianb]{babel}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\setpapersize{A4}
+\setmarginsrb{2cm}{1.5cm}{1cm}{1.5cm}{0pt}{0mm}{0pt}{13mm}
+\usepackage{indentfirst}
+\sloppy
+\begin{document}
+
+\centerline{\bf\LargeТеормин по математическому анализу, 3 семестр.}
+\noindent\( \{ u_k \}_{k = 1}^\infty, u_k \in \mathbb {R}, \sum\limits_{k=1}^\infty u_k \) называется числовым рядом. \\
+\( u_k \) - общий член ряда. \\
+\( S_n  = \sum\limits_{k=1}^n u_k \) - n-я частичная сумма ряда \\ 
+\begin{enumerate}
+    \item Числовой ряд \( \sum\limits_{k=1}^\infty u_k\) называется сходящимся, если сходится последовательность его частичных сумм \( \{ S_n \} \), т.е. \( \exists \lim\limits_{n \to \infty} S_n = S \).
+    \[ \forall \varepsilon > 0 \quad \exists N: \forall n \geqslant N \quad | S_n - S | < \varepsilon \]
+    
+    \item Критерий Коши:
+    \[ \sum\limits_{k=1}^\infty u_k \rightarrow \, \Leftrightarrow \forall \varepsilon > 0 \quad \exists N: \forall n \geqslant N, \, \forall p \in \mathpp {N} \]
+    \[ | S_{n + p} - S_n | = | \sum\limits_{k=n+1}^{n+p}u_k | < \varepsilon \]
+    Таким образом, необходимое условие сходимости: \( \sum\limits_{k=1}^{n+p}u_k \rightarrow \, \Rightarrow \lim\limits_{k \to \infty} u_k = 0 \).
+    
+    \item 1-й признак сравнения:
+    \[ 0 \leqslant p_k \leqslant q_k, \, \forall k \geqslant k_0 \geqslant 1 \Rightarrow \]
+    \[ \sum\limits_{k=1}^\infty q_k \rightarrow \, \Rightarrow \sum\limits_{k=1}^\infty p_k \rightarrow\]
+    \[ \sum\limits_{k=1}^\infty p_k \not\rightarrow \, \Rightarrow \sum\limits_{k=1}^\infty q_k \not\rightarrow\]
+
+    2-й признак сравнения: \\
+    \( \sqsupset p_k > 0, \, q_k > 0, \, k \geqslant k_0 \geqslant 1 \) и \( \exists \lim\limits_{k\to\infty}\frac{p_k}{q_k}=L \ne 0 \Rightarrow \) \\ для \( \forall L \) оба ряда сходятся или расходятся одновременно. \\
+    
+    3-й признак сравнения: \\
+    \( \sqsupset p_k > 0, \, q_k >0, \,\forall k \geqslant k_0 \geqslant 1 \) \\
+    \( \frac{p_{k+1}}{p_k} \leqslant \frac{q_{k+1}}{q_k} \Rightarrow \) справедливо утверждение первого признака сравнения. \\
+    
+    Частный признак: \\
+\[ \sqsupset p_k = o^*(\frac{1}{k^\alpha}), \, k \rightarrow \, \Rightarrow\]
+    \[ \sum\limits_{k = 1}^\infty p_k \limits_{\not\rightarrow \, \alpha \leqslant 1}^{\rightarrow \, \alpha > 1} \]
+    
+    \item Признак Даламбера: \\
+    \[ \sqsupset p_k > 0, \, \forall k \geqslant k_0 \geqslant 1 \]
+    \[\exists\lim\limits_{k\to\infty}\frac{p_{k+1}}{p_k} = q  \Rightarrow\]
+    \[ \sum\limits_{k=1}^\infty p_k \, \limits_{\not\rightarrow \, q > 1}^{\rightarrow \, q < 1} \]
+    
+    \item Признак Коши:
+    \[ \sqsupset p_k \geqslant 0, \, \forall k \geqslant k_0 \geqslant 1 \]
+    \[\exists\lim\limits_{k\to\infty} \sqrt[k]{p_k} = q  \Rightarrow\]
+    \[ \sum\limits_{k=1}^\infty p_k \, \limits_{\not\rightarrow \, q > 1}^{\rightarrow \, q < 1} \]
+    
+    \item Признак Раабе:
+    \[ \sqsupset p_k \geqslant 0, \, \forall k \geqslant k_0 \geqslant 1 \]
+    \[\exists\lim\limits_{k\to\infty} k(\frac{p_k}{p_{k+1}} - 1) = q  \Rightarrow\]
+    \[ \sum\limits_{k=1}^\infty p_k \, \limits_{\not\rightarrow \, q < 1}^{\rightarrow \, q > 1} \]
+    
+    \item Признак Гаусса:
+    \[ \sqsupset p_k >0, \]
+    \[ \frac{p_k}{p_{k + 1}} = \lambda + \frac{\mu}{\kappa} + \frac{\theta_k}{\kappa^{1 + \xi_p}}, |\theta_k| < \mu, \xi_p > 0 \Rightarrow \]
+    \[ \sum\limits_{k=1}^\infty p_k \, \limits_{\not\rightarrow \, \lambda < 1; \, \lambda = 1, \,\mu \leqslant 1 }^{\rightarrow \, \lambda > 1; \, \lambda = 1, \, \mu > 1} \]
+    
+    \item Интегральный признак Коши-Маклорена: \\
+    \( \sqsupset f(x) \geqslant 0, \) монотонно не возрастает, \\
+    \( \forall x \geqslant m, \, m \in \mathbb{N} \Rightarrow \) \\
+    \( \int\limits_m^\infty f(x) \, dx \) и \( \sum\limits_{k = m}^\infty f(k) \) сходятся и расходятся одновременно.
+    
+    \item Ряд \( \sum\limits_{k=1}^\infty \) называется абсолютно сходящимся, если сходится ряд из модулей \( \sum\limits_{k=1}^\infty | u_k | \). \\
+    Ряд \( \sum\limits_{k=1}^\infty \) называется условно сходящимся, если он сходится, а ряд из модулей расходится.
+    
+    \item Теорема Коши: \\
+    Если ряд \( \sum\limits_{k=1}^\infty u_k\) сходится абсолютно, то \( \forall \) ряд, полученный из него посредством некоторой перестановки, сходится абсолютно и имеет ту же сумму, что и ряд \( \sum\limits_{k=1}^\infty u_k\).
+    
+    \item Теорема Римана: \\
+    
+    
+    
+\end{enumerate}
+
+\end{document}
